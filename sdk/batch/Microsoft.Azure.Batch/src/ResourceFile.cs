@@ -12,9 +12,9 @@ namespace Microsoft.Azure.Batch
         /// Creates a new <see cref="ResourceFile"/> from the specified HTTP URL.
         /// </summary>
         /// <param name='httpUrl'>The URL of the file to download.</param>
-        /// <param name='filePath'>The file permission mode attribute in octal format.</param>
-        /// <param name='fileMode'>The location on the compute node to which to download the file(s), relative to the task's working directory.</param>
-        /// <returns>A <see cref="ResourceFile"/> from the specified HTTP URL.</returns>
+        /// <param name='filePath'>The location on the compute node to which to download the file(s), relative to the task's working directory.</param>
+        /// <returns>A <see cref="ResourceFile"/> from the specified HTTP URL.</param>
+        /// <param name='fileMode'>The file permission mode attribute in octal format.</returns>
         public static ResourceFile FromUrl(string httpUrl, string filePath, string fileMode = null)
         {
             return new ResourceFile(httpUrl: httpUrl, filePath: filePath, fileMode: fileMode);
@@ -25,9 +25,9 @@ namespace Microsoft.Azure.Batch
         /// </summary>
         /// <param name='httpUrl'>The URL of the file to download.</param>
         /// <param name='identityReference'>The identity to use for accessing the file in Azure Storage</param>
-        /// <param name='filePath'>The file permission mode attribute in octal format.</param>
-        /// <param name='fileMode'>The location on the compute node to which to download the file(s), relative to the task's working directory.</param>
-        /// <returns>A <see cref="ResourceFile"/> from the specified HTTP URL.</returns>
+        /// <param name='filePath'>The location on the compute node to which to download the file(s), relative to the task's working directory.</param>
+        /// <returns>A <see cref="ResourceFile"/> from the specified HTTP URL.</param>
+        /// <param name='fileMode'>The file permission mode attribute in octal format.</returns>
         public static ResourceFile FromUrl(string httpUrl, ComputeNodeIdentityReference identityReference, string filePath, string fileMode = null)
         {
             return new ResourceFile(httpUrl: httpUrl, filePath: filePath, fileMode: fileMode, identityReference: identityReference);
